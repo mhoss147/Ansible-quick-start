@@ -3,20 +3,15 @@
 # Ansible introduction
 
 - check cpu details
-  $ cat /proc/cpuinfo
+$ cat /proc/cpuinfo
 
 - check memory
-  $ free -g
+$ free -g
 
 
 
 
 
-
-- 
-- 
-- 
-- 
 
 
 
