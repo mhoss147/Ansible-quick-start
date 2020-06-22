@@ -4,6 +4,12 @@ https://docs.ansible.com/
 
 
 
+# delete a user 
+
+root@sorowar0073c:~# userdel userName -r
+
+
+
 # Ansible introduction
 
 - check cpu details
@@ -80,11 +86,14 @@ $ sudo useradd ansible
 [cloud_user@sorowar0072c ~]$ sudo passwd ansible
 
 
-- copy key to above server
+- go back to server71, login as ansubleUsrer
+
+
+- copy key to above server 
 
 [ansible@sorowar0071c ~]$ ssh-copy-id sorowar0072c.mylabserver.com
 
-give ansible password for that server
+(when prompt give ansibleUSER password for that server)
 
 
 - go to ...72 server
@@ -153,6 +162,9 @@ $ ssh-keygen
 - use ansible setup module
 
 [ansible@sorowar0071c ~]$ ansible sorowar0072 -m setup | less
+
+
+
 
 
 
