@@ -73,6 +73,12 @@ $ sudo useradd ansible
 [cloud_user@sorowar0071c ~]$ ssh sorowar0072c.mylabserver.com
 
 
+- add user named=ansible here too; also password
+
+[cloud_user@sorowar0072c ~]$ sudo useradd ansible
+
+[cloud_user@sorowar0072c ~]$ sudo passwd ansible
+
 
 - copy key to above server
 
@@ -114,13 +120,6 @@ line 111:  ansible        ALL=(ALL)       NOPASSWD: ALL
 [ansible@sorowar0072c ~]$ sudo su
 
 
-- add user named=ansible here too; also password
-
-[cloud_user@sorowar0072c ~]$ sudo useradd ansible
-
-[cloud_user@sorowar0072c ~]$ sudo passwd ansible
-
-
 
 - logout from server ...72
 
@@ -137,6 +136,8 @@ line 111:  ansible        ALL=(ALL)       NOPASSWD: ALL
 # genrate ssh key
 
 $ ssh-keygen
+
+
 
 
 
