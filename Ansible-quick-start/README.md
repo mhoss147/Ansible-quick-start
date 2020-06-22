@@ -139,6 +139,29 @@ $ ssh-keygen
 
 
 
+# ansible documentation in terminal
+
+[cloud_user@sorowar0071c ~]$ ansible-doc -s lineinfile
+
+
+# Ansible ad-hoc commands are the foundation of how to work with Ansible
+
+- ad-hoc comands are single command to execute
+
+
+
+- use ansible setup module
+
+[ansible@sorowar0071c ~]$ ansible sorowar0072 -m setup | less
+
+
+
+
+
+
+
+
+
 
 
 
