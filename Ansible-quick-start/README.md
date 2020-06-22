@@ -51,6 +51,28 @@ scoldham2 ansible_host=scoldham2c.mylabserver.com
 
 scoldham3 ansible_host=scoldham3c.mylabserver.com
 
+- my servers from la
+
+sorowar0072 ansible_host=sorowar0072c.websh.mylabserver.com
+
+sorowar0073 ansible_host=sorowar0073c.websh.mylabserver.com
+
+
+
+# create a userName=ansible who will use ansible
+
+$ sudo useradd ansible
+
+
+# add password for that user
+
+$ sudo passwd ansible
+
+
+
+
+
+
 
 
 
