@@ -1,5 +1,9 @@
 # Ansible-quick-start
 
+https://docs.ansible.com/
+
+
+
 # Ansible introduction
 
 - check cpu details
@@ -53,10 +57,9 @@ scoldham3 ansible_host=scoldham3c.mylabserver.com
 
 - my servers from la
 
-sorowar0072 ansible_host=sorowar0072c.websh.mylabserver.com
+sorowar0072 ansible_host=sorowar0072c.mylabserver.com
 
-sorowar0073 ansible_host=sorowar0073c.websh.mylabserver.com
-
+sorowar0073 ansible_host=sorowar0073c.mylabserver.com
 
 
 # create a userName=ansible who will use ansible
@@ -64,9 +67,80 @@ sorowar0073 ansible_host=sorowar0073c.websh.mylabserver.com
 $ sudo useradd ansible
 
 
-# add password for that user
 
-$ sudo passwd ansible
+- connect to server sorowar0072
+
+[cloud_user@sorowar0071c ~]$ ssh sorowar0072c.mylabserver.com
+
+
+
+- copy key to above server
+
+[ansible@sorowar0071c ~]$ ssh-copy-id sorowar0072c.mylabserver.com
+
+give ansible password for that server
+
+
+- go to ...72 server
+
+[ansible@sorowar0071c ~]$ ssh sorowar0072c.mylabserver.com
+
+
+(increase the permission in ...72 server, hence)
+
+- log out and log back to ..72 as cloud_user
+
+[ansible@sorowar0072c ~]$ logout
+
+[ansible@sorowar0071c ~]$ ssh cloud_user@sorowar0072c.mylabserver.com
+
+
+
+- lets allow the power like root user without password; change after line 110 # %wheel        ALL=(ALL)       NOPASSWD: ALL
+
+
+line 111:  ansible        ALL=(ALL)       NOPASSWD: ALL
+
+
+(to see line number ESC :set number)
+
+- log in as ansible user
+
+[cloud_user@sorowar0072c ~]$ sudo su - ansible
+
+
+- become root
+
+[ansible@sorowar0072c ~]$ sudo su
+
+
+- add user named=ansible here too; also password
+
+[cloud_user@sorowar0072c ~]$ sudo useradd ansible
+
+[cloud_user@sorowar0072c ~]$ sudo passwd ansible
+
+
+
+- logout from server ...72
+
+
+[cloud_user@sorowar0072c ~]$ logout
+
+
+# log in as ansible user
+
+[cloud_user@sorowar0071c ~]$ sudo su - ansible
+
+
+
+# genrate ssh key
+
+$ ssh-keygen
+
+
+
+
 
 
 
