@@ -155,13 +155,56 @@ $ ssh-keygen
 
 # Ansible ad-hoc commands are the foundation of how to work with Ansible
 
-- ad-hoc comands are single command to execute
+- Ad-hoc comands are single command to execute
 
+
+- login as ansible user
+
+
+[cloud_user@sorowar0072c ~]$ sudo su - ansible
 
 
 - use ansible setup module
 
-[ansible@sorowar0071c ~]$ ansible sorowar0072 -m setup | less
+[ansible@sorowar0071c ~]$ ansible sorowar0072 -m setup | less   (sorowar0072= severname alias)
+
+
+[ansible@sorowar0071c ~]$ ansible sorowar73 -m ping
+
+
+- install apache server
+
+[ansible@sorowar0071c ~]$ ansible sorowar72 -b -m yum -a "name=httpd state=latest"    (-b=becomeRootUser, -a=argument)
+
+
+- start apache
+
+[ansible@sorowar0071c ~]$ ansible sorowar72 -b -m service -a "name=httpd state=started"
+
+
+
+- got to server ...72
+
+[ansible@sorowar0071c ~]$ ssh sorowar0072c.mylabserver.com
+
+
+- check apache status
+
+[ansible@sorowar0072c ~]$ sudo systemctl status httpd
+
+
+- go back to ...71 and run this:
+
+[ansible@sorowar0071c ~]$ ansible sorowar72 -b -m service -a "name=httpd status=started"
+
+
+
+
+
+
+
+
+
 
 
 
