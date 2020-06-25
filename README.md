@@ -2,6 +2,4 @@
 
 
 
-References: 
 
-https://linuxacademy.com
